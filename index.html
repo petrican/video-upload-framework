@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="React Resumable JS : A React component for upload files with Resumable JS">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>React Resumable JS</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Artear/ReactResumableJS">View on GitHub</a>
+
+          <h1 id="project_title">React Resumable JS</h1>
+          <h2 id="project_tagline">A React component for upload files with Resumable JS</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Artear/ReactResumableJS/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Artear/ReactResumableJS/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="react-resumable-js" class="anchor" href="#react-resumable-js" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>React Resumable JS</h1>
+
+<p>Creates an uploader component in React, to use with <a href="http://www.resumablejs.com/">Resumable JS.</a></p>
+
+<p><a href="https://nodei.co/npm/react-resumable-js/"><img src="https://nodei.co/npm/react-resumable-js.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM"></a></p>
+
+<p><a href="https://circleci.com/gh/Artear/ReactResumableJS"><img src="https://circleci.com/gh/Artear/ReactResumableJS.svg" alt="CircleCI"></a> <a href="https://circleci.com/gh/Artear/ReactResumableJS"><img src="https://circleci.com/gh/Artear/ReactResumableJS.svg?style=shield" alt="CircleCI"></a></p>
+
+<p>On file added, the upload will begin.</p>
+
+<h3>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changelog:</h3>
+
+<ul>
+<li>1.1.5
+
+<ul>
+<li>added custom dropTargetId</li>
+</ul>
+</li>
+<li>1.1.4
+
+<ul>
+<li>added support to video and others in preview list</li>
+<li>added npm run demo command</li>
+</ul>
+</li>
+<li>1.1.3
+
+<ul>
+<li>fixed example</li>
+</ul>
+</li>
+<li>1.1.2
+
+<ul>
+<li>changed unique identifier</li>
+<li>changed option onFileSuccess, now return file uploaded and server message</li>
+</ul>
+</li>
+<li>1.1.0
+
+<ul>
+<li>Removed property options</li>
+<li>Now all options are properties ( see the example )</li>
+<li>Refactor: functions to arrow functions</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h3>
+
+<p><code>npm i react-resumable-js</code></p>
+
+<h3>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h3>
+
+<ul>
+<li>uploaderID The uploader ID. Ex: "image-upload"</li>
+<li>dropTargetID The dropTarget ID. Ex: "myDropTarget"</li>
+<li>fileAccept content type file accept on input file Ex: 'image/*'</li>
+<li>filetypes The allowed files extensions to upload. Ex: "['jpg', 'png']"</li>
+<li>fileAddedMessage The message to print when file is added. Optional. Ex: 'Starting....'</li>
+<li>completedMessage The message to print when file is completely uploaded. Optional. Ex: 'Completed!'</li>
+<li>service The service that will receive the file. Ex: '<a href="http://www.someurl.com/myservice/image.json">http://www.someurl.com/myservice/image.json</a>'</li>
+<li>textLabel The label of the upload. Ex: 'What photo do you want to add?'</li>
+<li>previousText A Text that will be displayed before the component. Optional.</li>
+<li>disableDragAndDrop True to disable Drag and Drop. Enable by default.</li>
+<li>onUploadErrorCallback Function to call on Upload error. <a href="https://github.com/returns" class="user-mention">@returns</a> file and message</li>
+<li>onFileAddedError Function to call on File Added error. <a href="https://github.com/returns" class="user-mention">@returns</a> file and errorCount</li>
+<li>headerObject Optional, if you need to add a headers object.</li>
+<li>onFileSuccess Method to call when file is upload. Usually a method to set the filename that was uploaded by the component.</li>
+</ul>
+
+<h3>
+<a id="folders" class="anchor" href="#folders" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Folders</h3>
+
+<ul>
+<li>build: last deploy build</li>
+<li>example: webpack dev server to run the demo
+
+<ul>
+<li>server: nodejs server to upload the files</li>
+</ul>
+</li>
+<li>src: source code</li>
+</ul>
+
+<h3>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">export</span> <span class="pl-v">default</span> <span class="pl-k">class</span> <span class="pl-en">ExampleForm</span> <span class="pl-k">extends</span> <span class="pl-e">React</span>.<span class="pl-smi">Component</span> {
+
+  <span class="pl-en">constructor</span>(<span class="pl-smi">props</span>) {
+    <span class="pl-v">super</span>(props);
+  }
+
+  <span class="pl-en">render</span>() {
+
+      <span class="pl-k">return</span> (
+        <span class="pl-k">&lt;</span>fieldset<span class="pl-k">&gt;</span>
+          <span class="pl-k">&lt;</span>p<span class="pl-k">&gt;</span>You can add other inputs, selects or stuff right here to complete a form.<span class="pl-k">&lt;</span><span class="pl-k">/</span>p<span class="pl-k">&gt;</span>
+          <span class="pl-k">&lt;</span>ReactResumableJs
+            uploaderID<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>image-upload<span class="pl-pds">"</span></span>
+            dropTargetID<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>myDropTarget<span class="pl-pds">"</span></span>
+            filetypes<span class="pl-k">=</span>{[<span class="pl-s"><span class="pl-pds">"</span>jpg<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>png<span class="pl-pds">"</span></span>]}
+            fileAccept<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>image/*<span class="pl-pds">"</span></span>
+            fileAddedMessage<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>Started!<span class="pl-pds">"</span></span>
+            completedMessage<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>Complete!<span class="pl-pds">"</span></span>
+            service<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>http://localhost:3000/upload<span class="pl-pds">"</span></span>
+            textLabel<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>Uploaded files<span class="pl-pds">"</span></span>
+            previousText<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>Drop to upload your media:<span class="pl-pds">"</span></span>
+            disableDragAndDrop<span class="pl-k">=</span>{<span class="pl-c1">true</span>}
+            onFileSuccess<span class="pl-k">=</span>{(<span class="pl-smi">file</span>, <span class="pl-smi">message</span>) <span class="pl-k">=&gt;</span> {
+              <span class="pl-en">console</span>.<span class="pl-c1">log</span>(file, message);
+            }}
+            onFileAdded<span class="pl-k">=</span>{(<span class="pl-smi">file</span>, <span class="pl-smi">resumable</span>) <span class="pl-k">=&gt;</span> {
+              <span class="pl-smi">resumable</span>.<span class="pl-en">upload</span>();
+            }}
+          <span class="pl-k">/</span><span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span><span class="pl-k">/</span>fieldset<span class="pl-k">&gt;</span>
+      );
+    }
+});</pre></div>
+
+<h3>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h3>
+
+<p><code>npm run demo</code></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">React Resumable JS maintained by <a href="https://github.com/Artear">Artear</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
