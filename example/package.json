@@ -64,13 +64,14 @@
     "webpack-dev-server": "^1.12.0"
   },
   "dependencies": {
+    "concat-files": "^0.1.1",
     "core-js": "^2.0.0",
+    "emptyform": "^1.0.6",
     "formsy-react": "^0.18.1",
     "formsy-react-components": "^0.8.1",
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
-    "resumablejs": "^1.0.2",
-    "emptyform": "^1.0.6"
+    "resumablejs": "^1.0.2"
   }
 }

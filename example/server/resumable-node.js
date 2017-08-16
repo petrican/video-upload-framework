@@ -1,4 +1,5 @@
 var fs = require('fs'), path = require('path'), util = require('util'), Stream = require('stream').Stream;
+var concat = require('concat-files');
 
 
 
@@ -88,7 +89,7 @@ module.exports = resumable = function(temporaryFolder){
   //'invalid_resumable_request', null, null, null
   //'non_resumable_request', null, null, null
   $.post = function(req, callback){
-
+   
     var fields = req.body;
     var files = req.files;
 
@@ -121,10 +122,32 @@ module.exports = resumable = function(temporaryFolder){
                   currentTestChunk++;
                   if(currentTestChunk>numberOfChunks) {
                     var hash = Math.floor(Date.now() / 1000);
-                    var finalName =  hash + '-' + filename;
-                    fs.rename(chunkFilename, $.temporaryFolder + finalName,function () {
-                      callback('done', finalName, hash);
+                    //var finalName =  hash + '-' + filename;
+                    //fs.rename(chunkFilename, $.temporaryFolder + finalName,function () {
+                    //  callback('done', finalName, hash);
+                    //});
+
+                    console.log('IDentifier:' + identifier);
+                    var chunkFilesArr = [];
+ 
+                    for (i = 1; i <= numberOfChunks; i++) {
+                      chunkFilesArr.push($.temporaryFolder + identifier + '.' + i);
+                    }  
+
+                    concat(chunkFilesArr, $.temporaryFolder + filename, function(err) {
+                       if (err) throw err
+                       console.log('Done Concat');
+                       for (k = 1; k <= numberOfChunks; k++) {
+                         fs.unlink($.temporaryFolder + identifier + '.' + k);
+                       }
+
                     });
+
+                    // console.log(chunkFilesArr);
+
+                    callback('done', identifier);
+                    
+
                   } else {
                     // Recursion
                     testChunkExists();
