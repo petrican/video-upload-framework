@@ -42,7 +42,9 @@
     "prop-types": "^15.5.0",
     "react": "^15.0.0",
     "react-dom": "^15.3.0",
-    "resumablejs": "^1.0.2"
+    "redux": "^3.7.2",
+    "resumablejs": "^1.0.2",
+    "video-react": "^0.8.6"
   },
   "deprecated": false,
   "description": "Upload component in React for using with Resumable JS",

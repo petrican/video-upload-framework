@@ -148,13 +148,37 @@ export default class ReactResumableJs extends React.Component {
             let uniqID = this.props.uploaderID + '-' + index;
             let originFile = file.file;
             let media = '';
-
+            /*
             if (file.file.type.indexOf('video') > -1) {
                 media = <label className="video">{originFile.name}</label>;
                 return <li className="thumbnail" key={uniqID}>
                     <label id={"media_" + uniqID}>{media}</label>
                     <a onClick={(event) => this.removeFile(event, file, index)} href="#">[X]</a>
                 </li>;
+            } */
+            if (file.file.type.indexOf('video') > -1) {
+                media = <label className="video">{originFile.name}</label>;
+/*
+                return  <video id="my-video" className="video-js" controls preload="auto" width="640" height="264" poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+                          <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"></source>
+                            <p className="vjs-no-js">
+                              To view this video please enable JavaScript, and consider upgrading to a web browser that
+                              <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                            </p>
+                          </video> */
+
+                return    <li className="thumbnail" key={uniqID}>
+                            <label id={"media_" + uniqID}>{media}</label>
+                              <video id="my-video" className="video-js" controls preload="auto" width="640" height="264" poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+                                <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"></source>
+                                <p className="vjs-no-js">
+                                   To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                   <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                                </p>
+                              </video>
+                            <a onClick={(event) => this.removeFile(event, file, index)} href="#">[X]</a>
+                          </li>;
+ 
             }
             else if (file.file.type.indexOf('image') > -1) if (this.props.tmpDir !== "") {
                 let src = this.props.tmpDir + file.fileName;

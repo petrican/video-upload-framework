@@ -18,14 +18,14 @@ const ContentInside = React.createClass({
         <h1> Video Upload Page </h1>
         <p> Allowed file types MOV, MP4, WEBM, AVI</p>
         <ReactResumableJs
-          uploaderID="image-upload"
-          dropTargetID="myDropTarget"
-          filetypes={["mov", "MOV", "mp4", "MP4", "webm", "WEBM", "avi","AVI"]}
+          uploaderID='image-upload'
+          dropTargetID='myDropTarget'
+          filetypes={['mov', 'MOV', 'mp4', 'MP4', 'webm', 'WEBM', 'avi','AVI']}
           maxFileSize={512000000}
-          fileAccept="*/*"
-          fileAddedMessage="Started!"
-          completedMessage="Complete!"
-          service="http://localhost:3000/upload"
+          fileAccept='*/*'
+          fileAddedMessage='Started!'
+          completedMessage='Complete!'
+          service='http://localhost:3000/upload'
 
           disableDragAndDrop={false}
           onFileSuccess={(file, message) => {
@@ -39,20 +39,20 @@ const ContentInside = React.createClass({
           onFileRemoved={(file) => {
             this.inputDisable = false;
             this.forceUpdate();
-            console.log('file removed', file);
+            //console.log('file removed', file);
           }}
           onMaxFileSizeErrorCallback={(file, errorCount) => {
             alert('Error! Max file size reached: ', file);
             console.log('errorCount: ', errorCount);
           }}
-          fileNameServer="file"
-          tmpDir="http://localhost:3000/tmp/"
+          fileNameServer='file'
+          tmpDir='http://localhost:3000/tmp/'
           maxFiles={100}
           onFileAddedError={(file, errorCount) => {
-            console.log('error file added', file, errorCount);
+            //console.log('error file added', file, errorCount);
           }}
           maxFilesErrorCallback={(file, errorCount) => {
-            console.log('maxFiles', file, errorCount);
+            //console.log('maxFiles', file, errorCount);
           }}
           disableInput={this.inputDisable}
           startButton={false}
@@ -112,5 +112,5 @@ export default class ExampleForm extends React.Component {
       />
     );
   }
-};
+}
 
