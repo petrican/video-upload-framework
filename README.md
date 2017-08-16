@@ -42,7 +42,16 @@ iv.
  Note to stop the app: $ cd example; npm run stop.
 
  
+ Files used to test:
 
+ testRaj1.webm - https://drive.google.com/open?id=0B1CY_32sJAdsbV9OTGMwQ1hLTUE
+ testRaj2_sample.mp4 - https://drive.google.com/open?id=0B1CY_32sJAdsenYzTzFjdDBWNzg
+
+
+ VIDEOS
+
+ Installation video: https://drive.google.com/open?id=0B1CY_32sJAdsRXJBb0d4YmdaV2M
+ Usage Video: https://drive.google.com/open?id=0B1CY_32sJAdsN1k2Uk4ybmxpZ1U
 
  
 
